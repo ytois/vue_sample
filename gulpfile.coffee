@@ -8,9 +8,9 @@ stylus      = require 'gulp-stylus'
 
 gulp.task 'pug', ->
   option = pretty: true
-  gulp.src("./src/pug/**/*.pug")
-    .pipe(pug(option))
-    .pipe(gulp.dest("./dist/"))
+  gulp.src ['./src/pug/**/*.pug', '!./src/pug/**/_*.pug']
+    .pipe pug(option)
+    .pipe gulp.dest('./dist/')
 
 gulp.task 'coffee', ->
   browserify
@@ -21,7 +21,7 @@ gulp.task 'coffee', ->
   .pipe gulp.dest('./dist/js/')
 
 gulp.task 'stylus', ->
-  gulp.src('./src/stylus/**/*.styl')
+  gulp.src ['./src/stylus/**/*.styl', '!./src/stylus/**/_*.styl']
     .pipe stylus()
     .pipe gulp.dest('./dist/css/')
 
@@ -34,10 +34,14 @@ gulp.task 'reload', ->
   browserSync.reload()
 
 gulp.task 'browser-sync', ->
-  browserSync server: baseDir: './dist/'
+  browserSync(
+    server:
+      baseDir: './dist/'
+      index: 'index.html'
+  )
   # ファイル変更時にリロードする
   gulp.watch './dist/**/*.html', ['reload']
   gulp.watch './dist/js/**/*.js', ['reload']
   gulp.watch './dist/css/**/*.css', ['reload']
 
-gulp.task('default', ['pug', 'coffee', 'stylus', 'browser-sync', 'watch']);
+gulp.task 'default', ['pug', 'coffee', 'stylus', 'browser-sync', 'watch']
