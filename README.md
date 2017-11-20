@@ -23,7 +23,7 @@ npm start
 
 ## 基本
 
-```
+```CoffeeScript
 new Vue(
   el: '#main'
   data:
@@ -31,7 +31,7 @@ new Vue(
 )
 ```
 
-```
+```Pug
 div#main
   input(v-model='message')
   p {{ messge }}
@@ -39,7 +39,7 @@ div#main
 
 ## メソッドを使ってみる & イベントをつけてみる
 
-```
+```CoffeeScript
 new Vue(
   el: '#main'
   data:
@@ -50,14 +50,14 @@ new Vue(
 )
 ```
 
-```
+```Pug
 div#main
   button(v-on:click='showAlert')
 ```
 
 ## if & ループで表示してみる
 
-```
+```CoffeeScript
 new Vue(
   el: '#main'
   data:
@@ -68,7 +68,7 @@ new Vue(
 )
 ```
 
-```
+```Pug
 div#main
   ul(v-for='i in list')
     li(v-if='isOdd(i)') {{ i }}
@@ -76,7 +76,7 @@ div#main
 
 ## 算出プロパティ & 属性にバインドしてみる
 
-```
+```CoffeeScript
 new Vue(
   el: '#main'
   data:
@@ -92,7 +92,7 @@ new Vue(
 )
 ```
 
-```
+```Pug
 style
   .text-normal {}
   .text-bold { font-weight: bold; }
@@ -105,7 +105,7 @@ div#main
 
 ## componentを使ってみる
 
-```
+```CoffeeScript
 VueChat = Vue.extend(
   props: ['width']
   # 型の指定やデフォルト値の指定もできる
@@ -136,7 +136,7 @@ new Vue(
 )
 ```
 
-```
+```Pug
 div#main
   chat(width='200')
 ```
