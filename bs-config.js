@@ -27,7 +27,8 @@ module.exports = {
         "ignoreInitial": true
     },
     "server": {
-      "baseDir": "./dist",
+      "baseDir": "./dist/",
+      "index": "index.html",
       "middleware": function(req, res, next){
         var timestamp = "[" + new Date().toISOString().replace(/T/, ' ').replace(/\..+/, '') + "] ";
         console.log(timestamp + req.method + " " + req.originalUrl + " - " +  req.connection.remoteAddress + " - " + req.headers['user-agent']);

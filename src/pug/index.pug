@@ -1,7 +1,25 @@
 extends _layout
 
 block body
-  h1 Vue.js sample
-  div#main
-    input(v-model='hoge')
-    button.btn.btn-primary submit
+  div.container
+    h1 Vue.js sample
+    div#main.hide
+      div.row
+        h2 Input Number
+        div
+          span phone number: 
+          input.ml_10(v-model='number' @input='normalization' placeholder='ex) 090-1234-5678')
+          span.ml_10(:class='number_class') {{ count }}文字
+          p.small.alert-text {{ alert_text }}
+        div.col-md-offset-4
+          button.btn.btn-sm.btn-primary(v-on:click='add_list') add
+
+      div.row
+        h2 Number List
+        div
+          span filter: 
+          input(v-model='filter_box')
+          ul(v-for='item in filterNumbers')
+            li {{ item }}
+
+
