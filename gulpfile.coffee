@@ -28,6 +28,7 @@ gulp.task 'stylus', ->
 gulp.task 'watch', ->
   gulp.watch ['./src/pug/**/*.pug'], ['pug']
   gulp.watch ['./src/coffee/**/*.coffee'], ['coffee']
+  gulp.watch ['./src/coffee/**/*.vue'], ['coffee']
   gulp.watch ['./src/stylus/**/*.styl'], ['stylus']
 
 gulp.task 'reload', ->
