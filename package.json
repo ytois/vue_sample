@@ -1,10 +1,10 @@
 {
-  "name": "vue_sample",
+  "name": "vue_skeleton",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "gulp"
+    "start": "$(npm bin)/gulp"
   },
   "author": "",
   "license": "ISC",
@@ -14,6 +14,7 @@
     "browserify": "^14.5.0",
     "coffeeify": "^3.0.1",
     "coffeescript": "^2.0.3",
+    "coffee-script": "^1.12.7",
     "gulp": "^3.9.1",
     "gulp-pug": "^3.3.0",
     "gulp-stylus": "^2.6.0",
@@ -21,7 +22,6 @@
     "vueify": "^9.4.1"
   },
   "dependencies": {
-    "coffee-script": "^1.12.7",
     "lodash": "^4.17.4",
     "vue": "^2.5.6"
   },
